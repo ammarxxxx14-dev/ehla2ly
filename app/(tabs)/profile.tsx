@@ -20,7 +20,7 @@ export default function ProfileScreen() {
     { title: 'Notifications', icon: Bell },
     { title: 'Language', icon: Languages, value: 'English (UK)' },
     { title: 'Help & Support', icon: HelpCircle },
-    { title: 'About Salonak', icon: Info },
+    { title: 'About Ehla2ly', icon: Info },
   ];
 
   return (

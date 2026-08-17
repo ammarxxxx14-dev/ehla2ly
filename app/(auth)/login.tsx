@@ -28,7 +28,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <View style={styles.header}>
-          <Text style={Typography.h1}>Welcome to Salonak</Text>
+          <Text style={Typography.h1}>Welcome to Ehla2ly</Text>
           <Text style={[Typography.body, styles.subtitle]}>
             Enter your phone number to continue. We will send you a verification code.
           </Text>

@@ -74,7 +74,7 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.greeting}>Shop Dashboard</Text>
-          <Text style={Typography.h1}>Salonak Zamalek</Text>
+          <Text style={Typography.h1}>Ehla2ly Zamalek</Text>
         </View>
         <View style={styles.statsGrid}>
           <View style={styles.statCard}>
