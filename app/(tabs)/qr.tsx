@@ -5,45 +5,44 @@ import { Colors, Typography, Borders } from '../../lib/theme';
 import { useAuthStore } from '../../stores/authStore';
 import { useState, useEffect } from 'react';
 
-// Safe BarCodeScanner import (can fail on Web)
-let BarCodeScanner: any = null;
+// Safe CameraView import — only on native, not web
+let CameraView: any = null;
+let useCameraPermissions: any = null;
 if (Platform.OS !== 'web') {
   try {
-    BarCodeScanner = require('expo-barcode-scanner').BarCodeScanner;
+    const cam = require('expo-camera');
+    CameraView = cam.CameraView;
+    useCameraPermissions = cam.useCameraPermissions;
   } catch (e) {
-    console.warn('Native module BarCodeScanner not found');
+    console.warn('expo-camera not available');
   }
 }
 
 export default function QRScreen() {
   const { user } = useAuthStore();
   const [timeLeft, setTimeLeft] = useState('14:59');
-  const [hasPermission, setHasPermission] = useState<boolean | null>(null);
   const [scanned, setScanned] = useState(false);
+
+  // Camera permission hook (native only)
+  const [permission, requestPermission] = useCameraPermissions
+    ? useCameraPermissions()
+    : [null, () => {}];
 
   const role = user?.role || 'customer';
   const isStaff = role === 'barber' || role === 'shop_owner';
 
-  // Mock booking data encoded in QR
+  // Mock booking QR data
   const qrData = JSON.stringify({
     bookingId: 'BK12345',
     userId: user?.id || 'guest',
     timestamp: new Date().toISOString(),
-    expiresAt: new Date(Date.now() + 15 * 60000).toISOString()
+    expiresAt: new Date(Date.now() + 15 * 60000).toISOString(),
   });
 
-  useEffect(() => {
-    if (isStaff && Platform.OS !== 'web' && BarCodeScanner) {
-      (async () => {
-        const { status } = await BarCodeScanner.requestPermissionsAsync();
-        setHasPermission(status === 'granted');
-      })();
-    }
-  }, [isStaff]);
-
+  // Countdown timer for customer QR
   useEffect(() => {
     if (!isStaff) {
-      let seconds = 900; // 15 mins
+      let seconds = 900;
       const timer = setInterval(() => {
         seconds--;
         const mins = Math.floor(seconds / 60);
@@ -57,29 +56,38 @@ export default function QRScreen() {
 
   const handleBarCodeScanned = ({ data }: { data: string }) => {
     setScanned(true);
-    alert(`Checked in mapping: ${data}`);
+    alert(`✅ Checked in: ${data}`);
     setTimeout(() => setScanned(false), 3000);
   };
 
   const renderScanner = () => {
-    if (Platform.OS === 'web' || !BarCodeScanner) {
+    if (Platform.OS === 'web' || !CameraView) {
       return (
-        <View style={styles.webScannerFallback}>
-          <Scissors size={48} color={Colors.border} />
+        <View style={styles.webFallback}>
+          <Scissors size={48} color={Colors.border} strokeWidth={1.5} />
           <Text style={[Typography.body, styles.fallbackText]}>
-            Scanner is only available on iOS/Android devices.
+            QR scanning is only available on iOS / Android.
           </Text>
         </View>
       );
     }
-
-    if (hasPermission === null) return <View style={styles.webScannerFallback}><Text>Requesting permission...</Text></View>;
-    if (hasPermission === false) return <View style={styles.webScannerFallback}><Text>No camera access</Text></View>;
-
+    if (!permission) return <View style={styles.webFallback}><Text>Loading...</Text></View>;
+    if (!permission.granted) {
+      return (
+        <View style={styles.webFallback}>
+          <Text style={Typography.body}>Camera access is required to scan.</Text>
+          <TouchableOpacity style={styles.permissionBtn} onPress={requestPermission}>
+            <Text style={styles.permissionBtnText}>Grant Permission</Text>
+          </TouchableOpacity>
+        </View>
+      );
+    }
     return (
-      <BarCodeScanner
-        onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
+      <CameraView
         style={StyleSheet.absoluteFillObject}
+        facing="back"
+        onBarcodeScanned={scanned ? undefined : handleBarCodeScanned}
+        barcodeScannerSettings={{ barcodeTypes: ['qr'] }}
       />
     );
   };
@@ -98,7 +106,11 @@ export default function QRScreen() {
           {isStaff ? (
             <View style={styles.scannerWrapper}>
               {renderScanner()}
-              {!scanned && <View style={styles.scanOverlay}><View style={styles.scanTarget} /></View>}
+              {!scanned && CameraView && Platform.OS !== 'web' && (
+                <View style={styles.scanOverlay}>
+                  <View style={styles.scanTarget} />
+                </View>
+              )}
             </View>
           ) : (
             <View style={styles.qrContent}>
@@ -121,7 +133,9 @@ export default function QRScreen() {
         <View style={styles.statusCard}>
           <ShieldCheck size={20} color={isStaff && scanned ? Colors.success : Colors.primary} />
           <Text style={[Typography.body, styles.statusText]}>
-            {isStaff ? (scanned ? 'Verification Successful' : 'Waiting for scan...') : `Verified for ${user?.name || 'User'}`}
+            {isStaff
+              ? scanned ? 'Verification Successful' : 'Waiting for scan...'
+              : `Verified for ${user?.name || 'User'}`}
           </Text>
         </View>
       </View>
@@ -146,9 +160,22 @@ const styles = StyleSheet.create({
   },
   scannerWrapper: { width: '100%', height: '100%', position: 'relative' },
   scanOverlay: { ...StyleSheet.absoluteFillObject, justifyContent: 'center', alignItems: 'center' },
-  scanTarget: { width: '70%', height: '70%', borderWidth: 2, borderColor: 'white', borderRadius: 24, borderStyle: 'dashed' },
+  scanTarget: {
+    width: '70%',
+    height: '70%',
+    borderWidth: 2,
+    borderColor: 'white',
+    borderRadius: 24,
+    borderStyle: 'dashed',
+  },
   qrContent: { alignItems: 'center', padding: 32 },
-  qrBackground: { padding: 16, backgroundColor: 'white', borderRadius: 16, borderWidth: 1, borderColor: '#f0f0f0' },
+  qrBackground: {
+    padding: 16,
+    backgroundColor: 'white',
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: '#f0f0f0',
+  },
   timerBadge: {
     marginTop: 24,
     backgroundColor: Colors.primaryLight,
@@ -170,7 +197,7 @@ const styles = StyleSheet.create({
     borderColor: Colors.primary,
   },
   statusText: { color: Colors.primary, marginLeft: 12, fontWeight: '600' },
-  webScannerFallback: {
+  webFallback: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
@@ -179,4 +206,12 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   fallbackText: { marginTop: 16, color: Colors.textSecondary, textAlign: 'center' },
+  permissionBtn: {
+    marginTop: 16,
+    backgroundColor: Colors.primary,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: Borders.buttonRadius,
+  },
+  permissionBtnText: { color: 'white', fontWeight: '700', fontSize: 14 },
 });
