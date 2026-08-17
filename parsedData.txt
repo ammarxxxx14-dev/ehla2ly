@@ -1,0 +1,883 @@
+--- START PDF ---
+PDF Error: pdfParse is not a function
+--- END PDF ---
+
+--- START DOCX ---
+
+
+SHILFA
+
+شِلفة
+
+Your Barber. Your Time. Your Style.
+
+
+
+
+
+MVP Scope & Market Analysis
+
+Men’s Barber Booking & Relationship App for Egypt
+
+
+
+Version 1.0  |  March 2026
+
+Prepared by: Aly  |  Confidential
+
+
+
+1. Executive Summary
+
+Shilfa (شِلفة — Egyptian slang for a fresh haircut) is a mobile-first barber booking and relationship app built for the Egyptian men’s grooming market. Unlike marketplace-first apps (Glamera, Fresha) that focus on discovering new providers, Shilfa is built around the core insight that Egyptian men are deeply loyal to their barber — they don’t need to FIND a barber, they need to BOOK the one they already have without wasting 1–2 hours waiting.
+
+The app serves three user types: Clients who book and manage their barber relationship, Barbers who manage their schedule and showcase their work, and Shop Owners who oversee their team. The QR check-in system, style memory with photos, and dual-profile portfolio are the core differentiators that no existing app delivers — especially not in Arabic.
+
+
+
+1.1 Why This Works in Egypt
+
+Men’s haircut prices have surged: 150–300 EGP at local barbers, 300–500+ EGP at premium shops — making commission/subscription economics viable
+
+Every popular barber in Egypt has the same problem: 5–8 guys waiting on the couch, some leave, no scheduling system exists
+
+Barbers already use Instagram as a portfolio — Shilfa gives them a functional portfolio that’s tied to real bookings and real clients
+
+Zero competition: theCut (US), SQUIRE (US), Barberly (US) don’t operate in MENA. Glamera targets women. Fresha is generic and not localized.
+
+Egyptian men visit barbers every 2–4 weeks — that’s 12–26 transactions/year per user, comparable to food delivery frequency
+
+
+
+2. Competitive Analysis
+
+Feature
+
+Shilfa
+
+theCut
+
+SQUIRE
+
+Glamera
+
+Fresha
+
+Barberly
+
+Available in Egypt/Arabic
+
+✅
+
+❌
+
+❌
+
+✅
+
+Partial
+
+❌
+
+Men-focused branding
+
+✅
+
+✅
+
+✅
+
+❌
+
+❌
+
+✅
+
+QR check-in with time window
+
+✅
+
+❌
+
+❌
+
+❌
+
+❌
+
+Partial
+
+Style memory + photos per client
+
+✅
+
+Partial
+
+❌
+
+❌
+
+Notes
+
+Partial
+
+Dual-profile portfolio (barber + client)
+
+✅
+
+❌
+
+❌
+
+❌
+
+❌
+
+❌
+
+Per-barber booking in shop
+
+✅
+
+✅
+
+✅
+
+❌
+
+✅
+
+✅
+
+Cash payment support
+
+✅
+
+❌
+
+❌
+
+✅
+
+Partial
+
+❌
+
+EGP pricing for barbers
+
+✅
+
+❌
+
+❌
+
+✅
+
+❌
+
+❌
+
+
+
+Key takeaway: Shilfa’s unique combination is Arabic-first + men-focused + QR check-in + style memory with photos + dual portfolio. No single competitor offers more than 2 of these together.
+
+
+
+3. MVP Feature Set
+
+Organized by user type and priority: P0 (launch), P1 (30 days post), P2 (60–90 days post).
+
+
+
+3.1 Client App Features
+
+Feature
+
+Priority
+
+Details
+
+Search for barber by name or shop name
+
+P0
+
+Fuzzy search, Arabic support
+
+View individual barber profiles (bio, portfolio photos, ratings, services + prices)
+
+P0
+
+Instagram-style grid of work
+
+See all barbers in a shop with individual availability
+
+P0
+
+Tap barber → see free slots today/this week
+
+Book a specific time slot with a specific barber
+
+P0
+
+Select service → pick time → confirm
+
+QR code generation on booking (appears 15 min before, expires 15 min after)
+
+P0
+
+Animated QR, countdown timer visible
+
+My style history: photos from previous visits with notes
+
+P0
+
+"Show barber" button to display last cut
+
+Rate and review barber after visit
+
+P0
+
+Star rating + optional text + optional photo
+
+Favorite barbers list
+
+P0
+
+Quick re-book from favorites
+
+Push notification reminders (1hr before appointment)
+
+P0
+
+"Your appointment with Ahmed is in 1 hour"
+
+Visit history with frequency stats
+
+P1
+
+"You visit every 18 days on average"
+
+Rebooking suggestion ("Time for a cut? It’s been 3 weeks")
+
+P1
+
+Smart nudge based on visit frequency
+
+Discover nearby barbers (map view)
+
+P2
+
+For when traveling or moved neighborhoods
+
+
+
+3.2 Barber App Features
+
+Feature
+
+Priority
+
+Details
+
+Profile setup: bio, photo, services list with prices, working hours
+
+P0
+
+Arabic text, EGP prices
+
+Portfolio: upload photos of work (tagged by style/service)
+
+P0
+
+Grid gallery, clients can be tagged
+
+Daily schedule view with booked slots + walk-in queue
+
+P0
+
+Color-coded: booked, available, break
+
+QR scanner to check in arriving clients
+
+P0
+
+Scan → auto-marks arrived → starts timer
+
+Client card: see preferences, style photos, visit history on scan
+
+P0
+
+"Aly: mid fade, 2 on sides, squared beard"
+
+Take post-cut photo and upload to both profiles
+
+P0
+
+Auto-linked to client + barber portfolio
+
+Accept/reject/reschedule booking requests
+
+P0
+
+Push notification on new booking
+
+Block time slots (prayer, break, personal)
+
+P0
+
+Recurring blocks supported
+
+Client analytics: total clients, frequency, top spenders
+
+P1
+
+"You served 142 clients this month"
+
+Walk-in management: add walk-in to queue, estimate wait time
+
+P1
+
+Display wait time on shop screen
+
+Revenue tracking (daily/weekly/monthly)
+
+P2
+
+Cash vs digital breakdown
+
+
+
+3.3 Shop Owner Features
+
+Feature
+
+Priority
+
+Details
+
+Shop profile: name, location, photos, working hours
+
+P0
+
+Google Maps pin integration
+
+Add/manage barbers in the shop
+
+P0
+
+Invite via phone number
+
+View all barbers’ schedules in one dashboard
+
+P1
+
+See who’s busy, who’s free
+
+Shop-level analytics (total bookings, busiest hours, top barbers)
+
+P2
+
+Insights for business decisions
+
+
+
+4. QR Check-In System — Core Differentiator
+
+The QR system is the heart of Shilfa. It replaces the awkward "I’m here" phone call and creates a verifiable, time-stamped check-in that benefits both parties.
+
+
+
+4.1 Flow
+
+Client books 4:00 PM slot with barber Ahmed
+
+At 3:45 PM, client’s app generates a dynamic QR code with a countdown timer
+
+Client arrives, opens app, shows QR to barber Ahmed
+
+Ahmed opens his barber app, taps "Scan", scans the QR
+
+System verifies: correct client, correct barber, within time window → check-in confirmed
+
+Ahmed’s screen shows Aly’s client card: preferred style, last cut photo, notes
+
+If QR is not scanned by 4:15 PM, it expires and the slot is released back to availability
+
+
+
+4.2 Technical Design
+
+QR encodes a signed JWT token containing: booking_id, client_id, barber_id, valid_from, valid_until
+
+Token is signed server-side so it can’t be forged or reused
+
+QR regenerates every 30 seconds with a new token (prevents screenshot sharing)
+
+Barber’s scanner validates the token locally against cached booking data (works offline briefly)
+
+On successful scan: booking status updates to “arrived”, client gets confirmation push notification
+
+
+
+4.3 No-Show Handling
+
+If QR expires without scan: booking auto-cancels, slot reopens, client gets “missed appointment” notification
+
+Repeat no-shows (3+ in 30 days) trigger a soft flag visible to barbers (“this client has missed recent appointments”)
+
+Barbers can optionally require a small deposit (via Fawry/Paymob) for flagged clients — P2 feature
+
+
+
+5. Dual Portfolio System
+
+This is Shilfa’s social layer — the feature that makes it sticky and shareable.
+
+
+
+5.1 How It Works
+
+After a cut, the barber takes a photo using the Shilfa app camera
+
+The photo is tagged with: client name, service performed, date, and optionally the style name
+
+The photo appears on BOTH the barber’s portfolio AND the client’s style history
+
+The barber’s portfolio becomes a living gallery of real work with real clients (not just Instagram reposts)
+
+The client’s profile becomes a visual timeline of their haircut evolution
+
+Next visit: client opens app, taps “Show last cut”, barber sees exactly what was done — no guessing
+
+
+
+5.2 Why This Matters
+
+For barbers: their portfolio grows automatically with every client. Better than Instagram because it’s verified work.
+
+For clients: “I want the same thing as last time” is now a tap, not a 5-minute explanation
+
+For Shilfa: every photo is organic content that drives app virality when shared on social media
+
+
+
+6. Technical Architecture
+
+Layer
+
+Technology
+
+Rationale
+
+Mobile App
+
+React Native (Expo)
+
+Single codebase for iOS + Android, your React expertise transfers
+
+Backend API
+
+Next.js API Routes or Express.js
+
+REST API, fast to build
+
+Database
+
+PostgreSQL (Supabase)
+
+Relational, RLS for multi-tenancy, free tier
+
+Auth
+
+Supabase Auth (phone OTP)
+
+Phone-first auth matches Egyptian behavior
+
+Image Storage
+
+Supabase Storage + CDN
+
+Portfolio photos, style history, profiles
+
+QR Generation
+
+react-native-qrcode-svg + JWT
+
+Client-side QR, server-signed tokens
+
+QR Scanning
+
+expo-camera / react-native-vision-camera
+
+Barber-side scanner, fast decode
+
+Push Notifications
+
+Expo Notifications + FCM/APNs
+
+Reminders, booking updates, nudges
+
+Maps
+
+Google Maps API
+
+Shop location, nearby discovery (P2)
+
+Hosting
+
+Vercel (API) + Supabase (DB/Storage)
+
+Low ops overhead
+
+
+
+7. Core Data Model
+
+Entity
+
+Key Fields
+
+User
+
+id, phone, name, avatar_url, role (client|barber|owner), created_at
+
+Shop
+
+id, owner_id, name, address, lat, lng, photos[], working_hours_json, description
+
+BarberProfile
+
+id, user_id, shop_id, bio, specialties[], services_json (name, price, duration_min), rating_avg, total_reviews
+
+Service
+
+id, barber_id, name_ar, name_en, price_egp, duration_min, is_active
+
+Booking
+
+id, client_id, barber_id, shop_id, service_id, start_time, status (pending|confirmed|arrived|in_chair|completed|no_show|cancelled), qr_token, qr_valid_from, qr_valid_until
+
+CheckIn
+
+id, booking_id, scanned_at, location_lat, location_lng
+
+StylePhoto
+
+id, booking_id, barber_id, client_id, photo_url, service_performed, style_tags[], notes, created_at
+
+ClientPreference
+
+id, client_id, barber_id, preferred_style_notes, preferred_products, last_style_photo_id
+
+Review
+
+id, booking_id, client_id, barber_id, rating (1-5), comment, photo_url, created_at
+
+Favorite
+
+id, client_id, barber_id, created_at
+
+
+
+8. Development Timeline
+
+Phase
+
+Deliverables
+
+Duration
+
+Milestone
+
+0
+
+Project setup, Expo + Supabase, auth (phone OTP), navigation, RTL layout
+
+Week 1–2
+
+Skeleton app running
+
+1
+
+Barber profiles, shop profiles, service catalog, portfolio gallery
+
+Week 3–4
+
+Barbers can set up profiles
+
+2
+
+Client search, barber discovery, per-barber availability view
+
+Week 5–6
+
+Clients can find barbers
+
+3
+
+Booking system: select barber → pick slot → confirm → push notification
+
+Week 7–8
+
+Bookings work end-to-end
+
+4
+
+QR check-in: generation, scanning, time-window validation, auto-expiry
+
+Week 9–10
+
+QR system live
+
+5
+
+Style memory: post-cut photo upload, dual-profile linking, client card view
+
+Week 11–12
+
+Portfolio system working
+
+6
+
+Reviews, ratings, favorites, rebooking, push reminders
+
+Week 13–14
+
+Engagement loop complete
+
+7
+
+Shop owner dashboard, barber analytics, polish + bug fixes
+
+Week 15–16
+
+Feature complete
+
+8
+
+Beta with 5–10 barber shops in Cairo, iterate based on feedback
+
+Week 17–20
+
+MVP LAUNCH
+
+
+
+Total: 20 weeks (~5 months) solo developer. Can compress to 14–16 weeks with a second developer on the React Native side.
+
+
+
+9. Monetization Strategy
+
+Shilfa monetizes from the barber/shop side, never from clients. The app is completely free for customers.
+
+
+
+9.1 Revenue Model
+
+Model
+
+Price
+
+What Barber Gets
+
+Free Tier
+
+0 EGP
+
+Profile, 20 bookings/month, 10 portfolio photos, basic schedule
+
+Pro Barber
+
+299 EGP/month
+
+Unlimited bookings, unlimited photos, client analytics, priority in search, style memory, walk-in queue
+
+Shop Plan
+
+799 EGP/month
+
+Up to 5 barbers, shop dashboard, team analytics, featured shop badge, all Pro features per barber
+
+Shop Plan+
+
+1,299 EGP/month
+
+Unlimited barbers, multi-branch, advanced analytics, custom branding, API access
+
+
+
+9.2 Why Barbers Will Pay
+
+299 EGP/month = the revenue from 2 haircuts. If Shilfa prevents just 3 walk-away customers per month (who left because of long wait), it pays for itself 2x over.
+
+The portfolio feature replaces the need for a separate Instagram business strategy — barbers get a professional portfolio that drives real bookings
+
+Style memory reduces miscommunication and callbacks — happier clients = more tips + more loyalty
+
+
+
+10. Go-To-Market Strategy
+
+
+
+10.1 Phase 1: Seed (Month 1–2)
+
+Personally onboard 5–10 popular barbers in New Cairo / Nasr City / Heliopolis who have the "always full, long wait" problem
+
+Offer free Pro for 3 months in exchange for feedback + letting you observe their workflow
+
+Each barber tells their regulars to download the app to book — organic client-side growth from barber network
+
+Target: 5–10 barbers, 100–300 client downloads
+
+
+
+10.2 Phase 2: Traction (Month 3–6)
+
+TikTok / Instagram Reels content: "POV: You booked your barber on Shilfa and walked straight to the chair" — this is highly shareable content
+
+Partner with barber influencers on TikTok (Egyptian barber TikTok is HUGE — millions of views)
+
+Every post-cut photo uploaded through Shilfa is watermarked with subtle branding — free organic marketing
+
+Target: 50–100 barbers, 2,000–5,000 client downloads
+
+
+
+10.3 Phase 3: Scale (Month 6–12)
+
+Expand to Alexandria, Mansoura, Tanta — university cities with young male demographics
+
+Launch "Shilfa Verified Barber" badge for quality-vetted barbers — trust signal
+
+Introduce women’s salon vertical if demand validates (same tech, different branding)
+
+Explore GCC expansion (Saudi, UAE) where men’s grooming spend is 5–10x Egypt
+
+
+
+11. Key Risks & Mitigations
+
+Risk
+
+Severity
+
+Mitigation
+
+Barbers resist adopting an app
+
+HIGH
+
+In-person onboarding. Show the ROI: "you lost 3 clients today who left because of the wait." Free tier removes cost barrier.
+
+Clients won’t download another app
+
+MEDIUM
+
+The barber is the distribution channel. When YOUR barber says "download this to book me," you download it. Barber-driven adoption.
+
+QR system feels over-engineered
+
+LOW
+
+Make it dead simple: open app → show QR → done in 3 seconds. Fallback: barber can manually confirm arrival.
+
+Glamera/Fresha copies the men’s vertical
+
+LOW
+
+Glamera has been women-focused for 6 years. Pivoting brand identity is extremely hard. First-mover advantage in men’s niche.
+
+Egyptian men won’t pre-book (walk-in culture)
+
+HIGH
+
+The target isn’t ALL men. It’s the ones already frustrated by waiting 1–2 hours. Start with the pain, not the habit.
+
+Low revenue per user
+
+MEDIUM
+
+Monetize the barber, not the client. 299 EGP/month from 500 barbers = 149,500 EGP MRR. Viable.
+
+
+
+12. Success Metrics (6 Months Post-Launch)
+
+Metric
+
+Target
+
+Signal
+
+Active barbers (1+ booking/week)
+
+100–200 barbers
+
+Supply-side traction
+
+Client app downloads
+
+5,000–10,000
+
+Demand-side pull
+
+Bookings per week
+
+1,000+
+
+Usage depth
+
+QR check-in rate
+
+> 70% of bookings
+
+Feature adoption
+
+No-show rate
+
+< 15%
+
+QR system effectiveness
+
+Style photos uploaded/week
+
+500+
+
+Portfolio engagement
+
+Paying barbers (Pro plan)
+
+50–100
+
+Revenue validation
+
+Monthly Recurring Revenue
+
+15,000–30,000 EGP
+
+Business sustainability
+
+
+
+13. Post-MVP Roadmap
+
+Loyalty program: "Your 10th cut is free" — barber-configured, tracked automatically through bookings
+
+Walk-in live queue: Display board (tablet at shop entrance) showing current wait time and queue position
+
+In-app tipping: Digital tips via Fawry/Paymob after the cut is completed
+
+AI style suggestions: Upload a selfie → AI suggests hairstyles based on face shape — highly viral feature
+
+Barber-to-barber social: Barbers follow each other, share techniques, build professional community
+
+Women’s vertical: Same core tech, different branding (“Shilfa Beauty” or separate app)
+
+GCC expansion: Saudi Arabia and UAE where men’s grooming is a $2B+ market with higher ARPU
+
+Product sales: Barbers sell hair products through the app (pomade, wax, beard oil) — e-commerce layer
+
+
+--- END DOCX ---

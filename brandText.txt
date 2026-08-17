@@ -1,0 +1,242 @@
+BRAND IDENTITY GUIDE
+Version 1.0  |  March 2026  |  Confidential
+Ehla2ly
+يلقلحإ
+Your Barber. Your Time. Your Style.
+Ehla2ly is a men's barber booking and relationship
+app built for the Egyptian market. This document
+defines the visual identity system including colors,
+typography, spacing, iconography, and usage rules.
+Prepared for internal use                                                                                          Do not distribute externally
+----------------Page (0) Break----------------
+Ehla2ly Brand Identity  —  Page 2
+Color palette
+Primary, neutral, and semantic color systems
+PRIMARY BRAND COLORS
+Teal is the brand's core identity. Used for CTAs, active states, and key UI elements.
+Teal
+#0D7377
+Deep Teal
+#0A5C5F
+Forest
+#073E40
+Teal Light
+#F0FAFA
+NEUTRAL PALETTE
+White-dominant UI with ink for text, grays for structure. No cream backgrounds in-app.
+White
+#FFFFFF
+Cloud
+#F5F5F5
+Border
+#E8E8E8
+Sand
+#D4C9B5
+Muted
+#8A8578
+Ink Light
+#4A4740
+Ink
+#2C2A25
+SEMANTIC / STATUS COLORS
+Used for booking states, badges, and system feedback. Each has a bg + text variant.
+Confirmed
+#16A34A / #E6F7EF
+Busy / Waiting
+#F59E0B / #FEF3CD
+No-show / Error
+#EF4444 / #FEE2E2
+QR Active / Info
+#0D7377 / #F0FAFA
+USAGE RULES
+DO:           Use teal (#0D7377) for primary buttons, active nav items, rating numbers, and price text.
+DO:           Use white (#FFFFFF) as the dominant background. App is white-first, not cream-first.
+DO:           Use Ink (#2C2A25) for all primary body text and headings.
+DON'T:      Use teal as a background for large surfaces. Reserve it for the upcoming card and stat blocks only.
+DON'T:      Use cream (#F5F0E6) as an in-app background. Cream is for marketing materials and print only.
+DON'T:      Mix semantic colors. One status badge per element. No green + gold on the same card.
+----------------Page (1) Break----------------
+Ehla2ly Brand Identity  —  Page 3
+Typography
+Font families, weights, and scale system
+PRIMARY TYPEFACE — PLUS JAKARTA SANS
+Used for all English UI text. Available on Google Fonts. Geometric, modern, highly legible.
+Regular (400)
+Used for body text, descriptions, and secondary labels
+Medium (500)
+Used for form labels, subtle emphasis, tab items
+SemiBold (600)
+Used for card titles, barber names, section headers
+Bold (700)
+Used for prices, stats, button labels
+ExtraBold (800)
+Used for page titles, hero text, the user greeting
+ARABIC TYPEFACE — NOTO KUFI ARABIC
+Used for all Arabic UI text. Kufi style pairs well with Jakarta Sans geometric forms.
+يلقلحإ
+Display size — app name, page titles
+كقاّلح نع ثحبا
+Section headers
+٢# ديف ديم | نقد + صق
+Body text, descriptions
+TYPE SCALE
+Consistent sizing across all screens. Based on 4px increments.
+22px
+ExtraBold                          Page titles, greeting
+20px
+ExtraBold                          Section page titles
+16px
+Bold                                  Date headers, back-nav title
+14px
+Bold                                  Card titles, barber names
+13px
+SemiBold                          Service names, time slots
+12px
+Regular                             Shop names, descriptions
+11px                      SemiBold                          Badges, filter chips, ratings
+10px                        SemiBold                          Labels, card subtitles, timestamps
+9px                            Bold                                  Tab bar labels, bottom nav
+TYPOGRAPHY RULES
+•  All UI text uses Plus Jakarta Sans. No fallback to system fonts in production.
+•  Arabic text uses Noto Kufi Arabic. Never mix Arabic and Latin in the same text run.
+•  Minimum font size in the app is 9px (tab bar labels). Never go smaller.
+•  Teal (#0D7377) for prices, ratings, and active-state text. Ink (#2C2A25) for everything else.
+•  Letter-spacing: 0 for body, -0.3px to -0.5px for large titles, +1.5px for uppercase labels.
+•  Line height: 1.4 for body text, 1.2 for headings, 1.0 for single-line labels.
+----------------Page (2) Break----------------
+Ehla2ly Brand Identity  —  Page 4
+UI Components
+Cards, buttons, badges, and spacing rules
+CARD SYSTEM
+All cards use the bordered style. No shadows. No glassmorphism. Consistent border-radius.
+Standard card
+border: 1.5px solid #E8E8E8
+border-radius: 14px  |  padding: 14px
+Accent card (teal)
+background: #0D7377
+Used for: upcoming apt, stats, visit count
+BUTTONS
+One primary button style. Full-width in cards. Teal fill, white text, 12px radius.
+Book with Ahmed
+background: #0D7377
+border-radius: 12px  |  padding: 15px
+font: 14px/700  |  color: #FFFFFF
+BADGES & CHIPS
+Available             Busy                 All                   Nearby                Fades               Kids
+SPACING SYSTEM
+4px base grid. All spacing is a multiple of 4. Horizontal page padding is always 20px.
+4px         Minimum gap — between badge and text
+8px         Tight gap — between cut-card tags, grid items
+10px       Card gap — between stacked search results
+12px       Section gap — between title and content
+14px       Card padding — inner padding of bordered cards
+16px       Section margin — space between distinct sections
+20px       Page padding — left/right margin on all screens
+24px       Large spacing — above/below stat rows, QR container
+BORDER RADIUS
+4px           Small elements: tags, inline badges
+8px           Barber avatars (square style), specialty tags
+10px         Time slot buttons
+12px         Primary CTA button, search bar
+14px         Standard cards, result cards, icon boxes
+20px         Filter chips (pill shape)
+50%          Circular avatars, notification bell container
+----------------Page (3) Break----------------
+Ehla2ly Brand Identity  —  Page 5
+Iconography & App Icon
+Icon style, navigation, and app store presence
+ICON STYLE
+•  Stroke-based icons only. No filled icons. 2px stroke weight at 20x20px.
+•  Icon source: Lucide Icons (lucide.dev) — consistent with React Native ecosystem.
+•  Icon color: #0D7377 (teal) for active/primary, #BBBBBB for inactive, #666666 for neutral.
+•  Icon containers: 42x42px rounded squares with #F0FAFA background for home grid actions.
+•  Never use emoji as icons. Always use SVG paths.
+BOTTOM NAVIGATION
+Home             House icon
+Active = teal icon + teal text + dot indicator
+Search           Magnifying glass
+Inactive = #BBBBBB icon + #BBBBBB text
+QR                  QR code grid
+The check-in entry point — most unique to Ehla2ly
+Bookings        Calendar
+My upcoming and past bookings
+Profile            Person
+User settings, preferences, style history
+APP ICON SPECIFICATIONS
+•  The app icon uses a teal background (#0D7377) with a white logomark centered.
+•  Corner radius follows platform defaults: iOS = continuous superellipse, Android = adaptive.
+•  The logomark (TBD — to be designed later) should be recognizable at 16x16px.
+•  Export sizes: 1024x1024 (App Store), 512x512 (Play Store), 192x192, 48x48, 32x32.
+•  No text in the app icon. The logomark must stand alone without the name.
+•  Dark variant: White/cream background (#F5F0E6) with teal logomark for light OS themes.
+E
+Primary (dark)
+E
+Light variant
+E
+Monochrome
+----------------Page (4) Break----------------
+Ehla2ly Brand Identity  —  Page 6
+Brand Voice & Usage
+Tone, language, and visual do's and don'ts
+BRAND VOICE
+Confident, not arrogant.
+We know barbers. We don't oversell.
+Casual, not sloppy.
+Egyptian street energy but polished. Think 'ya basha' not 'dear user'.
+Functional, not decorative.
+Every word earns its place. No filler copy.
+Bilingual, not translated.
+Arabic and English are equal. Arabic is not a translation of English.
+VISUAL RULES — DO'S
+✓    White-dominant backgrounds. Clean, airy layouts. Let content breathe.
+✓    Thin borders (1.5px, #E8E8E8) to define cards. No shadows for card elevation.
+✓    Teal as a surgical accent — buttons, prices, active states, badges. Not backgrounds.
+✓    Functional icons from Lucide. Stroke-only, 2px weight, consistent sizing.
+✓    Photography of real haircuts in portfolio sections. No stock photos. No illustrations.
+✓    Stats and numbers displayed prominently — visit counts, ratings, prices are first-class.
+VISUAL RULES — DON'TS
+✗    No glassmorphism, blur effects, or frosted glass. These are AI-generated aesthetics.
+✗    No gradients on buttons or cards. Flat solid colors only.
+✗    No rounded-everything. Use sharp corners (0px radius) on date-strip underlines and dividers.
+✗    No decorative noise textures, grain overlays, or ambient glow effects.
+✗    No cream/warm backgrounds inside the app. Cream is for the brand identity, not the UI.
+✗    No generic placeholder avatars. Use initials on colored backgrounds (teal or gray).
+✗    No emojis in UI (except the greeting wave on the home screen).
+MARKETING VS IN-APP
+•  Marketing (website, app store, social): Cream (#F5F0E6) backgrounds allowed. Bolder teal usage.
+•  In-app UI: White (#FFFFFF) backgrounds only. Teal used sparingly as accent.
+•  The dark background (#141310) from the mockup presentation is for design showcases only.
+•  App Store screenshots should use the cream background with phone mockups centered.
+----------------Page (5) Break----------------
+Ehla2ly Brand Identity  —  Page 7
+Quick Reference
+One-page cheat sheet for developers and designers
+COLORS
+#0D7377           Teal — primary CTA, active, prices
+#0A5C5F           Deep Teal — accent card bg, avatar bg
+#FFFFFF            White — app background
+#F5F5F5            Cloud — input bg, time slot bg
+#E8E8E8            Border — card borders, dividers
+#2C2A25           Ink — primary text, headings
+#8A8578           Muted — secondary text, descriptions
+#16A34A           Success — available badge
+#F59E0B            Warning — busy badge
+#EF4444            Danger — no-show, errors
+TYPOGRAPHY
+English         Plus Jakarta Sans              google.com/fonts — weights 400, 500, 600, 700, 800
+Arabic          Noto Kufi Arabic               google.com/fonts — weights 400, 500, 600, 700, 800
+Fallback       System sans-serif               Only for development. Never ship with fallback.
+KEY MEASUREMENTS
+Page padding                 20px left/right
+Card border                    1.5px solid #E8E8E8
+Card radius                    14px
+Button radius                 12px
+Avatar (circle)                44-54px diameter
+Avatar (square)             48px, 14px radius
+Icon containers              42x42px, 12px radius, #F0FAFA bg
+Time slots                      Two-column grid, 12px gap
+Bottom nav height       58px
+Notch safe area            36px top padding
+Brand Identity Guide v1.0  |  March 2026  |  يلقلحإ — Ehla2ly
+----------------Page (6) Break----------------
